@@ -1,8 +1,11 @@
 package Produto;
 
+import java.util.Comparator;
 import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
     private long codigo;
     private String nome;
     private double preco;
@@ -52,4 +55,18 @@ public class Produto {
                 ", quantidade=" + quantidade +
                 '}';
     }
+
+    @Override
+    public int compareTo(Produto p) {
+        return nome.compareToIgnoreCase(p.getNome());
+    }
+}
+
+class ComparatorPorPreco implements Comparator<Produto>{
+
+    @Override
+    public int compare(Produto p1, Produto p2) {
+        return Double.compare(p1.getPreco(), p2.getPreco());
+    }
+
 }
