@@ -6,8 +6,6 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.*;
 
-import static com.sun.tools.javac.resources.CompilerProperties.Fragments.Local;
-
 public class AgendaEvento {
     private Map<LocalDate, Evento> eventoMap;
 
